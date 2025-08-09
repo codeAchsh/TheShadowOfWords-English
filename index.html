@@ -15,22 +15,51 @@
   <meta property="og:image" content="https://github.com/codeAchsh/TheShadowOfWords/blob/main/images/banner.png" />
   <meta property="og:url" content="https://note.com/chill_2525" />
   <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRSJQ29FX4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XRSJQ29FX4');
-  </script>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="images/MyIcon.ico">
 </head>
 
 <body>
+  <!-- 🍪 Gentle Consent Banner -->
+  <div id="gentle-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;background:#f5f5f5;border:1px solid #ddd;padding:1em;text-align:center;font-family:'Noto Sans JP', sans-serif;font-size:14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:999;">
+    To gently enhance your experience in this quiet space, we use a small record.<br />
+    If you feel comfortable, please click “Yes”.
+    <br /><br />
+    <button onclick="acceptConsent()" style="background:#8fb9a8;color:white;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">Yes</button>
+  </div>
+
+
+  <!-- 🍃 Consent Management & Google Analytics -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const consent = localStorage.getItem('gentleConsent');
+      if (!consent) {
+        document.getElementById('gentle-banner').style.display = 'block';
+      } else {
+        loadAnalytics();
+      }
+    });
+
+    function acceptConsent() {
+      localStorage.setItem('gentleConsent', 'true');
+      document.getElementById('gentle-banner').style.display = 'none';
+      loadAnalytics();
+    }
+
+    function loadAnalytics() {
+      const script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XRSJQ29FX4';
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XRSJQ29FX4');
+    }
+  </script>
+
   <div id="shadow-area" style="position: relative; width: 100%; height: 100vh;"></div>
   <script src="script.js"></script>
 </body>
