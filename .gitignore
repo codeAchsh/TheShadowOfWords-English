@@ -1,0 +1,16 @@
+# Unnecessary files from OS or editors
+.DS_Store
+Thumbs.db
+*.log
+
+# Node.js dependencies and environment files
+node_modules/
+dist/
+.env
+
+# Editor settings (e.g., VSCode)
+.vscode/
+
+# Build output and cache
+*.cache
+build/
