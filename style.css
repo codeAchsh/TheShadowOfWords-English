@@ -22,7 +22,7 @@ body{
     text-align: center;
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100vh - 200px);
     overflow: hidden;
     position: absolute;
     font-size: 40px;
@@ -39,6 +39,15 @@ body{
     line-height: 1.6;
     opacity: 0;
     transition: opacity 2s ease-in, transform 2s ease-out;
+}
+footer {
+    background-color: #abc9c9;
+    text-align: center;
+    padding: 2em;
+    font-size: 0.9em;
+    color: #2E2E2E;
+    position: relative;
+    z-index: 1;
 }
 
 
