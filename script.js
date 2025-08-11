@@ -58,6 +58,7 @@ function showShadowWord() {
 window.addEventListener("load", () => {
   setTimeout(() => {
     showShadowWord(); // First display after 1 second delay
-    setInterval(showShadowWord, 6000); // Regular display every 6 seconds
+    setInterval(showShadowWord, 10000); // Regular display every 6 seconds
   }, 1000);
 });
+
